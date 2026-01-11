@@ -9,16 +9,19 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
@@ -49,6 +52,7 @@ class MainActivity : ComponentActivity() {
     fun MeowPointsApp() {
         val context = LocalContext.current
         var points by rememberSaveable { mutableIntStateOf(0) }
+        var behaviorText by rememberSaveable { mutableStateOf("") }
         val status = when {
             points < 0 -> "Rozrabiaka"
             points > 50 -> "Aniołek"
@@ -76,33 +80,42 @@ class MainActivity : ComponentActivity() {
                 )
             }
             Text(text = "Status: $status", modifier = Modifier.padding(16.dp))
-
+            OutlinedTextField(
+                value = behaviorText,
+                onValueChange = {behaviorText = it},
+                label = {Text(stringResource(R.string.event_name_hint))},
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 32.dp),
+                singleLine = true
+            )
             Spacer(modifier = Modifier.height(24.dp))
 
             Row(horizontalArrangement = Arrangement.spacedBy(16.dp)) {
                 Button(onClick = {
-                    points += 10
-                    if (points >= 100) {
-                        Toast.makeText(
-                            context,
-                            context.getString(R.string.toast_angel),
-                            Toast.LENGTH_SHORT
-                        ).show()
+                    if (behaviorText.isNotBlank()) {
+                        points += 10
+                        behaviorText = ""
+                        if (points >= 100) {
+                            Toast.makeText(context, context.getString(R.string.toast_angel), Toast.LENGTH_SHORT).show()
+                        }
+                    } else {
+                        Toast.makeText(context, "Wpisz co zrobił kot!", Toast.LENGTH_SHORT).show()
                     }
                 }) {
                     Text(text = stringResource(id = R.string.good_behavior))
                 }
                 Button(
-                    onClick = { points -= 10 },
-                    colors = ButtonDefaults.buttonColors(contentColor = MaterialTheme.colorScheme.error)
+                    onClick = {
+                        if (behaviorText.isNotBlank()) {
+                            points -= 10
+                            behaviorText = ""
+                        }
+                    },
+                    colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.error)
                 ) {
                     Text(text = stringResource(id = R.string.bad_behavior))
                 }
             }
         }
     }
-
-
-
-
-
