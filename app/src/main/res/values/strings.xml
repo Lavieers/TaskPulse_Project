@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MeowPoints</string>
+    <string name="points_label">Your cat\'s points:</string>
+    <string name="status_label">Status:</string>
+    <string name="add_event_title">Add behavior</string>
+    <string name="event_name_hint">What did the cat do?</string>
+    <string name="good_behavior">Good (+10)</string>
+    <string name="bad_behavior">Naughty (-10)</string>
+    <string name="history_button">View history</string>
+    <string name="save_button">Save</string>
+    <string name="toast_angel">Congratulations! Your cat is an angel!</string>
+</resources>
