@@ -1,12 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">MeowPoints</string>
-    <string name="points_label">Your cat\'s points:</string>
+    <string name="app_name">TaskPulse</string>
+    <string name="points_label">Efficiency Score:</string>
     <string name="status_label">Status:</string>
-    <string name="add_event_title">Add behavior</string>
-    <string name="event_name_hint">What did the cat do?</string>
-    <string name="good_behavior">Good (+10)</string>
-    <string name="bad_behavior">Naughty (-10)</string>
-    <string name="history_button">View history</string>
-    <string name="save_button">Save</string>
-    <string name="toast_angel">Congratulations! Your cat is an angel!</string>
+    <string name="status_naughty">Needs Improvement</string>
+    <string name="status_angel">Productivity Expert</string>
+    <string name="status_normal">Standard Level</string>
+    <string name="event_name_hint">Task description</string>
+    <string name="good_behavior">Completed (+10)</string>
+    <string name="bad_behavior">Skipped (-10)</string>
+    <string name="history_button">Activity Analysis</string>
+    <string name="history_title">Event Log</string>
+    <string name="back_button">Back</string>
+    <string name="toast_angel">Congratulations! You have reached expert focus status!</string>
+    <string name="error_empty">Please enter a task description!</string>
 </resources>

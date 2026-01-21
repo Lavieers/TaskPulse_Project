@@ -13,4 +13,7 @@ interface CatDao {
     fun getAllEvents(): Flow<List<CatEvent>>
     @Query("SELECT SUM(points)FROM cat_events")
     fun getTotalPoints(): Flow<Int?>
+
+    @Query("DELETE FROM cat_events")
+    suspend fun deleteAllEvents()
 }

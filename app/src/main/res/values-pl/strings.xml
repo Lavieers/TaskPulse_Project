@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TaskPulse</string>
+    <string name="points_label">Wynik efektywności:</string>
+    <string name="status_label">Status:</string>
+    <string name="status_naughty">Wymaga poprawy</string>
+    <string name="status_angel">Ekspert Produktywności</string>
+    <string name="status_normal">Poziom Standardowy</string>
+    <string name="event_name_hint">Opis zadania</string>
+    <string name="good_behavior">Ukończone (+10)</string>
+    <string name="bad_behavior">Pominięte (-10)</string>
+    <string name="history_button">Analiza aktywności</string>
+    <string name="history_title">Log zdarzeń</string>
+    <string name="back_button">Powrót</string>
+    <string name="toast_angel">Gratulacje! Osiągnięto status eksperta skupienia!</string>
+    <string name="error_empty">Proszę wprowadzić opis zadania!</string>
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TaskPulse</string>
+    <string name="points_label">Punteggio efficienza:</string>
+    <string name="status_label">Stato:</string>
+    <string name="status_naughty">Richiede miglioramento</string>
+    <string name="status_angel">Esperto di Produttività</string>
+    <string name="status_normal">Livello Standard</string>
+    <string name="event_name_hint">Descrizione del compito</string>
+    <string name="good_behavior">Completato (+10)</string>
+    <string name="bad_behavior">Saltato (-10)</string>
+    <string name="history_button">Analisi attività</string>
+    <string name="history_title">Registro eventi</string>
+    <string name="back_button">Indietro</string>
+    <string name="toast_angel">Congratulazioni! Hai raggiunto lo stato di esperto!</string>
+    <string name="error_empty">Inserisci una descrizione del compito!</string>
+</resources>
